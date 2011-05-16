@@ -37,5 +37,6 @@ def private_page(request):
     user=request.GET['user']
     loginUser = Profile.objects.get(name=user)
     wants_css = loginUser.want_css
-    return render_to_response('private_page.html', {'user': user, 'wants_css': wants_css})
+    css_list = Profile.objects.filter(have_css=True)
+    return render_to_response('private_page.html', {'user': user, 'wants_css': wants_css, 'css_list': css_list})
 

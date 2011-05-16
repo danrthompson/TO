@@ -8,9 +8,22 @@
 <p>Hey {{ user }}</p>
 
 {% if wants_css %}
-  <p>You want to learn CSS</p>
-{% else %} 
-  <p>You don't want to learn CSS</p>
+  {% if css_list %}
+    <p>Here are some Think Outsiders who could teach you CSS.</p>
+    
+    <ul>
+    {% for profile in css_list %}
+      <li>{{ profile.name }} {{ profile.email }}</li>
+    {% endfor %}
+    </ul>
+
+  {% endif %}
+{% endif %}
+
+</body>
+</html>
+    
+
 {% endif %}
 
 </body>
