@@ -12,7 +12,7 @@ def login(request):
         try:
          loginUser = Profile.objects.get(name=request.GET['user'])
         except:
-         message = 'No Such Username'
+         return HttpResponse('No Such Username')
         password = loginUser.password
         if password == request.GET['pwd']:
             return HttpResponseRedirect('/private_page/')
