@@ -34,6 +34,8 @@ def check_auth(request):
     return HttpResponse(message)
 
 def private_page(request):
-    loginUser = Profile.objects.get(name=request.GET['user'])
-    return HttpResponse(loginUser.name)
+    name=request.GET['user']
+    loginUser = Profile.objects.get(name)
+    wants_css = loginUser.want_css
+    return HttpResponse('private_page.html',{'name': name}, {'wants_css': wants_css})
 
