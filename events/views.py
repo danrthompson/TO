@@ -2,6 +2,7 @@ from django.contrib.auth import models
 from django.contrib import messages
 import datetime
 from profiles.models import Profile
+from events.models import Event
 
 def create_event(request):
   name     = request.POST['name']
