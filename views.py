@@ -36,6 +36,6 @@ def check_auth(request):
 def private_page(request):
     name=request.GET['user']
     loginUser = Profile.objects.get(name)
-    wants_css = loginUser.want_css
-    return render_to_response('private_page.html', {'name': name}, {'wants_css': wants_css})
+#    wants_css = loginUser.want_css
+    return render_to_response('private_page.html', {'name': name}, {'wants_css': True})
 
