@@ -33,3 +33,7 @@ def check_auth(request):
 	message = 'Error'
     return HttpResponse(message)
 
+def private_page(request):
+    loginUser = Profile.objects.get(name=request.GET['user'])
+    return HttpResponse(loginUser.name)
+
