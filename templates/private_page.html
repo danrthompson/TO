@@ -26,7 +26,7 @@
 
   <ul>
   {% for event in event_list %}
-    <li>{{ event.name }} on {{ event.date }} by You.</li>
+    <li>{{ event.name }} on {{ event.date }} by {{ event.creator.name }}.</li>
   {% endfor %}
   </ul>
 
