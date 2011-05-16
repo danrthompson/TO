@@ -20,6 +20,21 @@
   {% endif %}
 {% endif %}
 
+<p>Here are some events that might interest you</p>
+
+<h2>Create an Event</h2>
+
+  <form action="/create_event/" method="post">
+    Event name: <input type="text" name="name"><br />
+    Event date: <input type="text" name="date"><br />
+    Event creator: <input type="text" name="creator"><br />
+    <input type="checkbox" name="design" /> Design Event<br />
+    <input type="checkbox" name="hacking" /> Hacking Event<br />
+    <input type="checkbox" name="social" /> Social Event<br />
+    <br />
+    <input type="submit" value="Submit">
+  </form>
+
 </body>
 </html>
     
