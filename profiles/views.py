@@ -30,5 +30,4 @@ def create_profile(request):
 		       , date_created  = date_created
 		       )
   new_profile.save()
-
-  return HttpResponse('yay')
+  return HttpResponseRedirect('/private_page/?user=%s' % name)
