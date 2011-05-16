@@ -15,7 +15,7 @@ def login(request):
          return HttpResponse('No Such Username')
         password = loginUser.password
         if password == request.GET['pwd']:
-            return HttpResponseRedirect('/private_page/')
+            return HttpResponseRedirect('/private_page/?user=%s' % name)
         else:
            message = 'wrong pass'
     else:
@@ -31,4 +31,7 @@ def check_auth(request):
     else:
 	message = 'Error'
     return HttpResponse(message)
+
+def private_page(request):
+
 
