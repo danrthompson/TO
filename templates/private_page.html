@@ -20,7 +20,17 @@
   {% endif %}
 {% endif %}
 
-<p>Here are some events that might interest you</p>
+
+{% if event_list %}
+  <p>Here are some events that might interest you</p>
+
+  <ul>
+  {% for event in event_list %}
+    <li>{{ event.name }} on {{ event.date }} by You.</li>
+  {% endfor %}
+  </ul>
+
+{% endif %}
 
 <h2>Create an Event</h2>
 

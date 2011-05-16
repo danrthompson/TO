@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanen
 from profiles.models import Profile
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth import authenticate, models, login, logout
+from events.models import Event
 
 def home(request):
     return render_to_response('home.html')
@@ -38,5 +39,9 @@ def private_page(request):
     loginUser = Profile.objects.get(name=user)
     wants_css = loginUser.want_css
     css_list = Profile.objects.filter(have_css=True)
-    return render_to_response('private_page.html', {'user': user, 'wants_css': wants_css, 'css_list': css_list})
+    if loginUser.design:
+      event_list = Event.objects.filter(design=True)
+    else:
+      event_list = []
+    return render_to_response('private_page.html', {'user': user, 'wants_css': wants_css, 'css_list': css_list, 'event_list': event_list})
 
