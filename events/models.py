@@ -1,4 +1,5 @@
 from django.db import models
+from profiles.models import Profile
 
 class Event(models.Model):
   name      = models.CharField(max_length=100)
