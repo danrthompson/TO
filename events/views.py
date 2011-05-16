@@ -20,4 +20,4 @@ def create_event(request):
 		   , creator  = creator_profile
 		   )
   new_event.save()
-  return HttpResponseRedirect('/private_page/?user=%s' % creator`)
+  return HttpResponseRedirect('/private_page/?user=%s' % creator)
