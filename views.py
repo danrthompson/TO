@@ -17,10 +17,10 @@ def login(request):
         if password == request.GET['pwd']:
             return HttpResponseRedirect('/private_page/')
         else:
-           return HttpResponse('wrong pass')
+           message = 'wrong pass'
     else:
-	return HttpResponse('Error')
-    return HttpResponse('unusual')
+	message = 'Error'
+    return HttpResponse(message)
 
 def check_auth(request):
     if 'pwd' in request.GET:
