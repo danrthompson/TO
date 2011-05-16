@@ -32,6 +32,3 @@ def check_auth(request):
 	message = 'Error'
     return HttpResponse(message)
 
-def private_page(request):
-
-
