@@ -3,15 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanen
 from profiles.models import Profile
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth import authenticate, models, login, logout
-import subprocess
-import os
 
 def home(request):
-    return render_to_response('home.html')
-
-def githook(request):
-    cmd = 'mv home.html home'
-    os.system(cmd)
     return render_to_response('home.html')
 
 def login(request):
@@ -22,7 +15,7 @@ def login(request):
          return HttpResponse('No Such Username')
         password = loginUser.password
         if password == request.GET['pwd']:
-            message = 'YES!'
+            HttpResponseRedirect('/private_page')
         else:
            message = 'wrong pass'
     else:

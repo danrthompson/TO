@@ -1,1 +1,0 @@
-<?php `sudo apachectl stop`; 
